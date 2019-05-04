@@ -1,0 +1,252 @@
+<h3 class="mb-3">
+  <span [innerText]="isEdit ? 'Edit': 'Create'"></span> a study set
+</h3>
+<div>
+  <form #setForm="ngForm">
+    <input name="_id" type="hidden" [(ngModel)]="set._id" #setId="ngModel"/>
+    <div class="form-group">
+      <input
+        type="text"
+        class="col-6 mb-3 form-control"
+        name="name"
+        placeholder="Enter name"
+        [(ngModel)]="set.name"
+        [ngClass]="{'is-invalid':setName.errors && setName.touched}"
+        #setName="ngModel"
+        required
+        minlength="3"
+      >
+      <div [hidden]="!setName.errors?.required" class="invalid-feedback">
+        Name required
+      </div>
+      <div [hidden]="!setName.errors?.minlength" class="invalid-feedback">
+        Must be at least 3 characters
+      </div>
+    </div>
+
+    <div class="card card-body mt-3 pb-5">
+      <div class="form-row justify-content-around">
+        <div class="text-black-50 h4 mr-1">1</div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control"
+            name="term1"
+            placeholder="Enter term"
+            [(ngModel)]="set.card1.term"
+            [ngClass]="{'is-invalid':setTerm1.errors && setTerm1.touched}"
+            #setTerm1="ngModel"
+            required
+          />
+          <div [hidden]="!setTerm1.errors?.required" class="invalid-feedback">
+            Term required
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control"
+            name="definition1"
+            placeholder="Enter definition"
+            [(ngModel)]="set.card1.definition"
+            [ngClass]="{'is-invalid':setDefinition1.errors && setDefinition1.touched}"
+            #setDefinition1="ngModel"
+            required
+          />
+          <div [hidden]="!setDefinition1.errors?.required" class="invalid-feedback">
+            Definition required
+          </div>
+
+          <input
+            type="hidden"
+            class="form-control"
+            name="star1"
+            [(ngModel)]="set.card1.star"
+            #setStar1="ngModel"
+            required
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-body mt-3 pb-5">
+      <div class="form-row justify-content-around">
+        <div class="text-black-50 h4 mr-2">2</div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control"
+            name="term2"
+            placeholder="Enter term"
+            [(ngModel)]="set.card2.term"
+            [ngClass]="{'is-invalid':setTerm2.errors && setTerm2.touched}"
+            #setTerm2="ngModel"
+            required
+          />
+          <div [hidden]="!setTerm2.errors?.required" class="invalid-feedback">
+            Term required
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control"
+            name="definition2"
+            placeholder="Enter definition"
+            [(ngModel)]="set.card2.definition"
+            [ngClass]="{'is-invalid':setDefinition2.errors && setDefinition2.touched}"
+            #setDefinition2="ngModel"
+            required
+          />
+          <div [hidden]="!setDefinition2.errors?.required" class="invalid-feedback">
+            Definition required
+          </div>
+
+          <input
+            type="hidden"
+            class="form-control"
+            name="star2"
+            [(ngModel)]="set.card2.star"
+            #setStar2="ngModel"
+            required
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-body mt-3 pb-5">
+      <div class="form-row justify-content-around">
+        <div class="text-black-50 h4 mr-3">3</div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control"
+            name="term3"
+            placeholder="Enter term"
+            [(ngModel)]="set.card3.term"
+            [ngClass]="{'is-invalid':setTerm3.errors && setTerm3.touched}"
+            #setTerm3="ngModel"
+            required
+          />
+          <div [hidden]="!setTerm3.errors?.required" class="invalid-feedback">
+            Term required
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control"
+            name="definition3"
+            placeholder="Enter definition"
+            [(ngModel)]="set.card3.definition"
+            [ngClass]="{'is-invalid':setDefinition3.errors && setDefinition3.touched}"
+            #setDefinition3="ngModel"
+            required
+          />
+          <div [hidden]="!setDefinition3.errors?.required" class="invalid-feedback">
+            Definition required
+          </div>
+
+          <input
+            type="hidden"
+            class="form-control"
+            name="star3"
+            [(ngModel)]="set.card3.star"
+            #setStar3="ngModel"
+            required
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-body mt-3 pb-5">
+      <div class="form-row justify-content-around">
+        <div class="text-black-50 h4 mr-4">4</div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control"
+            name="term4"
+            placeholder="Enter term"
+            [(ngModel)]="set.card4.term"
+            [ngClass]="{'is-invalid':setTerm4.errors && setTerm4.touched}"
+            #setTerm4="ngModel"
+            required
+          />
+          <div [hidden]="!setTerm4.errors?.required" class="invalid-feedback">
+            Term required
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control"
+            name="definition4"
+            placeholder="Enter definition"
+            [(ngModel)]="set.card4.definition"
+            [ngClass]="{'is-invalid':setDefinition4.errors && setDefinition4.touched}"
+            #setDefinition4="ngModel"
+            required
+          />
+          <div [hidden]="!setDefinition4.errors?.required" class="invalid-feedback">
+            Definition required
+          </div>
+          <input
+            type="hidden"
+            class="form-control"
+            name="star4"
+            [(ngModel)]="set.card4.star"
+            #setStar4="ngModel"
+            required
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-body mt-3 pb-5">
+      <div class="form-row justify-content-around">
+        <div class="text-black-50 h4 mr-5">5</div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control"
+            name="term5"
+            placeholder="Enter term"
+            [(ngModel)]="set.card5.term"
+            [ngClass]="{'is-invalid':setTerm5.errors && setTerm5.touched}"
+            #setTerm5="ngModel"
+            required
+          />
+          <div [hidden]="!setTerm5.errors?.required" class="invalid-feedback">
+            Term required
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <input
+            type="text"
+            class="form-control"
+            name="definition5"
+            placeholder="Enter definition"
+            [(ngModel)]="set.card5.definition"
+            [ngClass]="{'is-invalid':setDefinition5.errors && setDefinition5.touched}"
+            #setDefinition5="ngModel"
+            required
+          />
+          <div [hidden]="!setDefinition5.errors?.required" class="invalid-feedback">
+            Definition required
+          </div>
+          <input
+            type="hidden"
+            class="form-control"
+            name="star5"
+            [(ngModel)]="set.card5.star"
+            #setStar5="ngModel"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <button *ngIf="!isEdit" [disabled]="!setForm.form.valid" class="btn btn-primary mt-3 float-right" (click)="addSet(setForm)">Create</button>
+    <button *ngIf="isEdit" [disabled]="!setForm.form.valid" class="btn btn-primary mt-3 float-right" (click)="updateSet(setForm)">Update</button>
+  </form>
+</div>

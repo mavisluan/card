@@ -1,0 +1,23 @@
+<!--<div>SET: {{set.name}}</div>-->
+<div *ngIf="currentCard">
+
+<div class="h3 text-center text-danger"  *ngIf="message">{{message}}</div>
+<div class="card bg-light text-center display-1">
+  <div class="card-body p-5">
+    <button class="d-inline-block col-sm-3 border-0 btn-light" (click)="showLast()"><i class="fas fa-chevron-left"></i></button>
+    <div class="d-inline-block col-sm-6">
+      <a
+        class="h4 border-0 btn-light text-warning"
+        (click)="toggleCardStar(currentSet._id, currentCard._id)"
+      >
+        <i [class]="currentCard.star ? 'fas fa-star' : 'far fa-star'"></i>
+      </a>
+      <div *ngIf="showTerm">{{currentCard.term}}</div>
+      <div *ngIf="!showTerm">{{currentCard.definition}}</div>
+    </div>
+    <button class="d-inline-block col-sm-3 border-0 btn-light" (click)="showNext()"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <button class="btn btn-warning" [innerText]="showTerm?'Show Definition' : 'Show Term' "
+          (click)="showTerm = !showTerm"></button>
+</div>
+</div>

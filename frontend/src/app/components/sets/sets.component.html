@@ -1,0 +1,14 @@
+<div class="container mt-5 overflow-auto" style="height:40em">
+  <div class="card mt-3" *ngFor="let set of sets">
+    <div class="card-body">
+      <div class="d-inline-block col-sm-7">
+      <p>{{set.cards.length}} terms</p>
+      <a class="h3 card-link" routerLink="/sets/{{set._id}}">{{set.name}}</a>
+      </div>
+      <div class="d-inline-block">
+        <div routerLink="/sets/{{set._id}}/edit" class="btn btn-link"><i class="fas fa-pencil-alt h3 text-dark"></i></div>
+        <div (click)="deleteSet(set._id)" class="btn ml-5 btn-link"><i class="fas fa-trash-alt h3 text-dark"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
