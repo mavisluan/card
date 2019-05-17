@@ -1,3 +1,28 @@
-<p>
-  match works!
-</p>
+<div *ngIf="terms.length > 0 && defs.length > 0">
+<!--  <div class="row">-->
+<!--    <h3 class="col-sm-6">Terms</h3>-->
+<!--    <h3 class="col-sm-6">Definition</h3>-->
+<!--  </div>-->
+  <div class="h3 text-center">Match</div>
+  <div class="mt-5">
+  <div class="row">
+    <div class="col-sm-6 text-center" >
+      <p class="h4 p-3" *ngFor="let idx of terms" >
+        <button class="btn btn-lg btn-primary text-white" (click)="setTermIdx(idx)">{{cards[idx].term}}</button>
+      </p>
+    </div>
+    <div class="col-sm-6 text-center" >
+      <p class="h4 p-3" *ngFor="let idx of defs">
+        <button class="btn-lg btn-warning" (click)="setDefIdx(idx)" >{{cards[idx].definition}}</button>
+      </p>
+    </div>
+  </div>
+  </div>
+</div>
+<div class="jumbotron jumbotron-fluid mt-5"  *ngIf="terms.length === 0 && defs.length === 0">
+  <div class="container text-center text-success">
+    <h1 class="display-4">Congratulations!</h1>
+    <h1 class="display-4">You won!</h1>
+    <button class="btn btn-warning mt-3" (click)="generateCards()">Play again!</button>
+  </div>
+</div>
