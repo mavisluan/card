@@ -1,3 +1,4 @@
+<button class="btn btn-light float-right" routerLink="/sets/{{currentSetId}}">Back to Set</button>
 <div class="container mt-5 col-8">
   <form (ngSubmit)="submitTest(answers)" >
     <div class="form-group row input-group input-group-lg" *ngFor="let card of cards, let i = index">

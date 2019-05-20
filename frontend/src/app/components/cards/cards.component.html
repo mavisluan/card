@@ -5,8 +5,8 @@
     <button class="btn btn-info" (click)="getAllCards()">All</button>
     <button class="btn btn-warning ml-3" (click)="getStarCards()">Stars</button>
     <button class="btn btn-primary ml-3" (click)="flashcard=true">FlashCard</button>
-    <a class="btn btn-danger ml-3" routerLink="/sets/{{currentSet._id}}/test">Test</a>
     <a class="btn btn-secondary ml-3" routerLink="/sets/{{currentSet._id}}/match">Match</a>
+    <a class="btn btn-danger ml-3" routerLink="/sets/{{currentSet._id}}/test">Test</a>
   </div>
   <div class="card mt-3" *ngFor="let card of activeCards">
     <div class="card-body display-4">
