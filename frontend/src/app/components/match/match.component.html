@@ -1,11 +1,12 @@
+<div class="h3 text-center">Matching Game</div>
+
 <button class="btn btn-light float-right" routerLink="/sets/{{currentSetId}}">Back to Set</button>
 <div *ngIf="terms.length > 0 && defs.length > 0">
-<!--  <div class="row">-->
-<!--    <h3 class="col-sm-6">Terms</h3>-->
-<!--    <h3 class="col-sm-6">Definition</h3>-->
-<!--  </div>-->
-  <div class="h3 text-center">Match</div>
-  <div class="mt-5">
+  <div class="row mt-5">
+    <h4 class="col-sm-6 text-center">Terms</h4>
+    <h4 class="col-sm-6 text-center">Definition</h4>
+  </div>
+<!--  <div class="mt-5">-->
   <div class="row">
     <div class="col-sm-6 text-center" >
       <p class="h4 p-3" *ngFor="let idx of terms" >
@@ -19,7 +20,7 @@
     </div>
   </div>
   </div>
-</div>
+<!--</div>-->
 <div class="jumbotron jumbotron-fluid mt-5"  *ngIf="terms.length === 0 && defs.length === 0">
   <div class="container text-center text-success">
     <h1 class="display-4">Congratulations!</h1>
@@ -27,3 +28,5 @@
     <button class="btn btn-warning mt-3" (click)="generateCards()">Play again!</button>
   </div>
 </div>
+<div class="h4 text-center mt-5">Make everything disappear!</div>
+<p class="text-center">Match terms and definitions</p>
